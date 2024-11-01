@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Create Report</title>
+</head>
+<body>
+    <header class="header-container">
+        <h1>AutoGestion</h1>
+    </header>
+
+    
+    <nav>
+        <ul>
+            <li><a href="menuChoferCrearReporte.html">Create Report</a></li>
+            <li><a href="menuChoferMisReportes.html">My Reports </a></li>
+            <li><a href="Nosotros.html">Log Out </a></li>
+        </ul>
+    </nav>
+    
+    <section class="main-content">
+<h2 >Create Report</h2>
+
+<form action="">
+
+<label for="">Date</label>
+<input type="datetime-local"></form>
+
+<label for="">Description</label>
+<input type="text" name="" id="">
+
+<label for="">Fault Type</label>
+<input type="text">
+
+<label for="">Place where the fault occurred</label>
+<input type="text" id="ubicacion" name="ubicacion" readonly required><br>
+
+
+
+
+</form>
+<script>
+    // Comprueba si la API de geolocalización está disponible
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                // Obtén la latitud y longitud del usuario
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                // Inserta la ubicación en el campo de entrada
+                document.getElementById('ubicacion').value = `Latitud: ${lat}, Longitud: ${lon}`;
+            },
+            (error) => {
+                console.error("Error obteniendo la ubicación:", error);
+                document.getElementById('ubicacion').value = "No se pudo obtener la ubicación";
+            }
+        );
+    } else {
+        document.getElementById('ubicacion').value = "Geolocalización no compatible con el navegador";
+    }
+</script>
+
+
+    </section>
+
+
+
+
+
+</body>
+</html>

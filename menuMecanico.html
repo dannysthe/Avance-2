@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic</title>
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' width='24' height='24'><path d='M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z'></path><path d='M15.5 9.422c.312 .18 .503 .515 .5 .876v3.277c0 .364 -.197 .7 -.515 .877l-3 1.922a1 1 0 0 1 -.97 0l-3 -1.922a1 1 0 0 1 -.515 -.876v-3.278c0 -.364 .197 -.7 .514 -.877l3 -1.79c.311 -.174 .69 -.174 1 0l3 1.79h-.014z'></path></svg>">
+</head>
+<body>
+    <header class="header-container">
+        <h1>AutoGestión</h1>
+    </header>
+
+    
+    <nav>
+        <ul>
+            <li><a href="HistorialMante.html">Maintenance History</a></li>
+            <li><a href="Nosotros.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Profile Photo</h2>
+        <form id="uploadForm">
+            
+            <div class="preview-container">
+                <img id="imagePreview" src="#" alt="Vista previa" style="display: none;">
+            </div>
+            <!-- Botón personalizado para examinar -->
+            <label class="custom-file-upload">
+                <input type="file" id="fileInput" accept="image/*" required>
+                Examinar
+            </label>
+            <button type="submit">Save Photo</button>
+        </form>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const imagePreview = document.getElementById('imagePreview');
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('uploadForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert('Foto subida con éxito!');
+        });
+    </script>
+
+    
+    <section class="main-content">
+        <h2>My Data</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Workshop</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>E-mail</th>
+                <td></td>
+            </tr>
+
+            <tr>
+                <th>Factory</th>
+                <td></td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

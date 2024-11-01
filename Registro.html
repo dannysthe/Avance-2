@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <title>Login</title>
+</head>
+<body>
+    <header class="header-container">
+        <h1>AutoGestion</h1>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="InicioSesion.html">Login</a></li>
+            <li><a href="Nosotros.html">About us</a></li>
+        </ul>
+    </nav>
+    <section class="main-content">
+        
+        <h2>Registration menu</h2>
+
+        <div>
+            <form action="">
+                <label for="usuario">User</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario">
+    
+                <label for="nombre">Name</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+    
+                <label for="apellido1">Firs Surname</label>
+                <input type="text" name="apellido1" id="apellido1" placeholder="Apellido Paterno">
+    
+                <label for="apellido2">Second Surname</label>
+                <input type="text" name="apellido2" id="apellido2" placeholder="Apellido Materno">
+    
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="E-mail">
+
+                <label for="numeroTel">Phone Number</label>
+                <input type="tel" name="numeroTel" id="numeroTel" placeholder="Número telefónico" pattern="[0-9]{10}" title="Ingrese un número válido de 10 dígitos" required>
+    
+                <label for="contraseña">Password</label>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
+    
+                <label for="RepetirContraseña">Repeat Password</label>
+                <input type="password" name="RepetirContraseña" id="RepetirContraseña" placeholder="Ingrese su contraseña nuevamente">
+            </form>
+        </div>
+
+        <div>
+            <button type="submit">Register</button>
+        </div>
+        
+    </section>
+</body>
+</html>
